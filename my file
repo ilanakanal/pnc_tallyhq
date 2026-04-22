@@ -1,1 +1,9 @@
-
+# Define a function to rename multiple columns in a PySpark DataFrame
+def rename_columns_for_output_files(df: DataFrame, columns_map: dict) -> DataFrame:
+    # Use reduce to apply withColumnRenamed repeatedly for each column in the mapping
+    return reduce(
+        # For each key in the dictionary, rename the column from old name to new name
+        lambda data, col: data.withColumnRenamed(col, columns_map[col]),
+        columns_map,  # Iterate over the keys (old column names)
+        df  # Initial value for reduce is the original DataFrame
+    )
