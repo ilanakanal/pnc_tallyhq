@@ -7,4 +7,4 @@ def rename_columns_for_output_files(df: DataFrame, columns_map: dict) -> DataFra
         columns_map,  # Iterate over the keys (old column names)
         df  # Initial value for reduce is the original DataFrame
     )
-jhkjlhjklhjkl
+
